@@ -18,6 +18,40 @@ npm install --save execa-wrap
 
 ## Use
 
+From the tests, include both this module and 
+[snap-shot-it](https://github.com/bahmutov/snap-shot-it)
+
+```js
+const execaWrap = require('execa-wrap')
+const snapshot = require('snap-shot-it')
+describe('execa-wrap', () => {
+  it('ls', () => {
+    return execaWrap('ls', ['src']).then(snapshot)
+  })
+})
+```
+```text
+$ cat __snapshots__/execa-wrap-spec.js 
+exports['execa-wrap ls 1'] = `
+  command: ls src
+  code: 0
+  failed: false
+  killed: false
+  signal: null
+  timedOut: false
+
+  stdout:
+  -------
+  execa-wrap-spec.js
+  index.js
+  -------
+  stderr:
+  -------
+  
+  -------
+  `
+```
+
 ### Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2017

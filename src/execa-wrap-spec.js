@@ -1,11 +1,11 @@
 'use strict'
 
-
 /* eslint-env mocha */
 const execaWrap = require('.')
+const snapshot = require('snap-shot-it')
 
 describe('execa-wrap', () => {
-  it('write this test', () => {
-    console.assert(execaWrap, 'should export something')
+  it('ls', () => {
+    return execaWrap('ls', ['src']).then(snapshot)
   })
 })
