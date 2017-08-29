@@ -52,6 +52,9 @@ exports['execa-wrap ls 1'] = `
   `
 ```
 
+You probably want to cleanup the output before the snapshot step. For example, you might
+want to remove timings, stack traces, etc.
+
 ### Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2017
