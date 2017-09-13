@@ -17,3 +17,21 @@ exports['execa-wrap ls 1'] = `
   -------
   `
 
+exports['execa-wrap failing 1'] = `
+  command: boo src
+  code: ENOENT
+  failed: true
+  killed: false
+  signal: null
+  timedOut: false
+
+  stdout:
+  -------
+  
+  -------
+  stderr:
+  -------
+  
+  -------
+  `
+

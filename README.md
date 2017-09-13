@@ -55,6 +55,19 @@ exports['execa-wrap ls 1'] = `
 You probably want to cleanup the output before the snapshot step. For example, you might
 want to remove timings, stack traces, etc.
 
+If the program fails, the output and everything else will be processed the same way.
+Thus you can test the programs returning non-zero exit codes by just attaching resolved
+promise callback
+
+```js
+const execaWrap = require('execa-wrap')
+execaWrap('failing-command', ['its', 'arguments'])
+  .then(output => {
+    // output will be text like above but with 
+    // details like exit code and stderr
+  })
+```
+
 ### Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2017

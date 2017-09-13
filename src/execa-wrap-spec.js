@@ -8,4 +8,8 @@ describe('execa-wrap', () => {
   it('ls', () => {
     return execaWrap('ls', ['src']).then(snapshot)
   })
+
+  it('failing', () => {
+    return execaWrap('boo', ['src']).then(snapshot)
+  })
 })

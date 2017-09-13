@@ -11,6 +11,7 @@ const stripFields = R.evolve({
 
 const makeText = execResult => {
   const stdout = indentString(stripLeadingIndent(execResult.stdout), 2).trim()
+  const stderr = indentString(stripLeadingIndent(execResult.stderr), 2).trim()
 
   return `
   command: ${execResult.cmd}
@@ -26,7 +27,7 @@ const makeText = execResult => {
   -------
   stderr:
   -------
-  ${execResult.stderr}
+  ${stderr}
   -------
   `
 }
@@ -35,7 +36,7 @@ function execWrapper (cmd, args) {
   const child = execa(cmd, args)
   child.stdout.pipe(process.stdout)
   child.stderr.pipe(process.stderr)
-  return child.then(stripFields).then(makeText)
+  return child.then(stripFields, stripFields).then(makeText)
 }
 
 module.exports = execWrapper
