@@ -7,6 +7,8 @@
 [![Build status][ci-image] ][ci-url]
 [![semantic-release][semantic-image] ][semantic-url]
 [![js-standard-style][standard-image]][standard-url]
+[![Build status](https://ci.appveyor.com/api/projects/status/k0x59r7f4qem7nvb?svg=true)](https://ci.appveyor.com/project/RandallKent/execa-wrap)
+
 
 ## Install
 
