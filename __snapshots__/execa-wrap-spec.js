@@ -1,25 +1,25 @@
-exports['execa-wrap windows ls 1'] = `
+exports['ls src 1'] = `
 
   command: ls src
-  code: ENOENT
-  failed: true
+  code: 0
+  failed: false
   killed: false
   signal: null
   timedOut: false
 
   stdout:
   -------
-  
+  execa-wrap-spec.js
+  index.js
   -------
   stderr:
   -------
-  'ls' is not recognized as an internal or external command,
-  operable program or batch file.
+  
   -------
   
 `
 
-exports['execa-wrap windows failing 1'] = `
+exports['boo src 1'] = `
 
   command: boo src
   code: ENOENT
@@ -34,8 +34,7 @@ exports['execa-wrap windows failing 1'] = `
   -------
   stderr:
   -------
-  'boo' is not recognized as an internal or external command,
-  operable program or batch file.
+  
   -------
   
 `
