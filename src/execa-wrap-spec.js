@@ -3,22 +3,26 @@
 /* eslint-env mocha */
 const execaWrap = require('.')
 const snapshot = require('snap-shot-it')
+const os = require('os')
 
-function print (s) {
-	console.log(s)
-	return s
+if (os.platform() === 'win32') {
+  describe('execa-wrap windows', () => {
+    it('ls', () => {
+      return execaWrap('ls', ['src']).then(snapshot)
+    })
+
+    it('failing', () => {
+      return execaWrap('boo', ['src']).then(snapshot)
+    })
+  })
+} else {
+  describe('execa-wrap', () => {
+    it('ls', () => {
+      return execaWrap('ls', ['src']).then(snapshot)
+    })
+
+    it('failing', () => {
+      return execaWrap('boo', ['src']).then(snapshot)
+    })
+  })
 }
-
-describe('execa-wrap', () => {
-  it('ls', () => {
-    return execaWrap('ls', ['src'])
-    	.then(print)
-    	.then(snapshot)
-  })
-
-  it('failing', () => {
-    return execaWrap('boo', ['src'])
-    	.then(print)
-    	.then(snapshot)
-  })
-})
