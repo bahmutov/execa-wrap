@@ -11,6 +11,7 @@ exports['ls src 1'] = `
   -------
   execa-wrap-spec.js
   index.js
+  windows-spec.js
   -------
   stderr:
   -------
