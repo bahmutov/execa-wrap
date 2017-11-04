@@ -70,6 +70,25 @@ execaWrap('failing-command', ['its', 'arguments'])
   })
 ```
 
+### Filtering properties
+
+If you are not interested in every returned property, you can filter and get only some
+properties. For example, let us grab `command` and `stdout`
+
+```js
+execaWrap('ls', ['src'], {filter: ['cmd', 'stdout']})
+// command: ls src
+// stdout
+// ------
+```
+
+For a single filter, just use a string or single item array
+
+```js
+execaWrap('ls', ['src'], {filter: 'cmd'})
+// command: ls src
+```
+
 ### Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2017
