@@ -6,7 +6,7 @@ exports['fields filter 1'] = `
   index.js
   windows-spec.js
   -------
-  
+
 `
 
 exports['ls src 1'] = `
@@ -58,5 +58,5 @@ exports['single field filter 1'] = `
   index.js
   windows-spec.js
   -------
-  
+
 `

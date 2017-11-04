@@ -31,15 +31,13 @@ const makeFilteredText = result => {
     message += `  stdout:
   -------
   ${result.stdout}
-  -------
-  `
+  -------\n`
   }
   if (result.stderr) {
     message += `  stderr:
   -------
   ${result.stderr}
-  -------
-  `
+  -------\n`
   }
   return message
 }
