@@ -4,11 +4,18 @@
 const execaWrap = require('.')
 const snapshot = require('snap-shot-it')
 const os = require('os')
+const la = require('lazy-ass')
 
 if (os.platform() !== 'win32') {
   describe('execa-wrap', () => {
     it('ls', () => {
       return execaWrap('ls', ['src']).then(snapshot.bind(null, 'ls src'))
+    })
+
+    it('filtering code 0', () => {
+      return execaWrap('ls', ['src'], { filter: 'code' }).then(output => {
+        la(output.indexOf('code: 0') !== -1, output)
+      })
     })
 
     it('failing', () => {
