@@ -8,7 +8,7 @@
 [![semantic-release][semantic-image] ][semantic-url]
 [![js-standard-style][standard-image]][standard-url]
 [![Build status](https://ci.appveyor.com/api/projects/status/k0x59r7f4qem7nvb?svg=true)](https://ci.appveyor.com/project/RandallKent/execa-wrap)
-
+[![renovate-app badge][renovate-badge]][renovate-app]
 
 ## Install
 
@@ -20,7 +20,7 @@ npm install --save execa-wrap
 
 ## Use
 
-From the tests, include both this module and 
+From the tests, include both this module and
 [snap-shot-it](https://github.com/bahmutov/snap-shot-it)
 
 ```js
@@ -33,7 +33,7 @@ describe('execa-wrap', () => {
 })
 ```
 ```text
-$ cat __snapshots__/execa-wrap-spec.js 
+$ cat __snapshots__/execa-wrap-spec.js
 exports['execa-wrap ls 1'] = `
   command: ls src
   code: 0
@@ -49,7 +49,7 @@ exports['execa-wrap ls 1'] = `
   -------
   stderr:
   -------
-  
+
   -------
   `
 ```
@@ -65,7 +65,7 @@ promise callback
 const execaWrap = require('execa-wrap')
 execaWrap('failing-command', ['its', 'arguments'])
   .then(output => {
-    // output will be text like above but with 
+    // output will be text like above but with
     // details like exit code and stderr
   })
 ```
@@ -135,3 +135,5 @@ OTHER DEALINGS IN THE SOFTWARE.
 [semantic-url]: https://github.com/semantic-release/semantic-release
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg
 [standard-url]: http://standardjs.com/
+[renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
+[renovate-app]: https://renovateapp.com/
