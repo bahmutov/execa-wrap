@@ -89,6 +89,7 @@
   },
   "dependencies": {
     "common-tags": "1.4.0",
+    "debug": "3.1.0",
     "execa": "0.8.0",
     "indent-string": "3.2.0",
     "ramda": "0.24.1",

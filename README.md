@@ -89,6 +89,10 @@ execaWrap('ls', ['src'], {filter: 'cmd'})
 // command: ls src
 ```
 
+## Debug
+
+To see internal log messages, run with `DEBUG=execa-wrap` environment variable
+
 ### Small print
 
 Author: Gleb Bahmutov &lt;gleb.bahmutov@gmail.com&gt; &copy; 2017

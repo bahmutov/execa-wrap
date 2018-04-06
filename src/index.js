@@ -3,6 +3,7 @@ const stripAnsi = require('strip-ansi')
 const R = require('ramda')
 const stripLeadingIndent = require('strip-indent')
 const indentString = require('indent-string')
+const debug = require('debug')('execa-wrap')
 
 const stripFields = R.evolve({
   stdout: stripAnsi,
@@ -10,6 +11,8 @@ const stripFields = R.evolve({
 })
 
 const makeFilteredText = result => {
+  debug('making filtered text from result %j', result)
+
   // indent with 2 spaces every line
   let message = ''
   if (result.cmd) {
@@ -73,6 +76,7 @@ const makeText = (options = {}) => execResult => {
     filter = [filter]
   }
   if (Array.isArray(filter) && filter.length) {
+    debug('filtering only %j', filter)
     return makeFilteredText(R.pick(filter, result))
   }
 
