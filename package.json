@@ -93,7 +93,7 @@
     "debug": "3.1.0",
     "execa": "0.10.0",
     "indent-string": "3.2.0",
-    "ramda": "0.24.1",
+    "ramda": "0.25.0",
     "strip-ansi": "4.0.0",
     "strip-indent": "2.0.0"
   }
