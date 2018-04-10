@@ -85,7 +85,7 @@
     "prettier-standard": "7.0.3",
     "semantic-release": "7.0.2",
     "simple-commit-message": "3.3.2",
-    "snap-shot-it": "4.0.1",
+    "snap-shot-it": "4.1.4",
     "standard": "10.0.3"
   },
   "dependencies": {
