@@ -84,7 +84,7 @@ const makeText = (options = {}) => execResult => {
 }
 
 function execWrapper (cmd, args, options = {}) {
-  const child = execa(cmd, args)
+  const child = execa(cmd, args, options)
   child.stdout.pipe(process.stdout)
   child.stderr.pipe(process.stderr)
   return child.then(stripFields, stripFields).then(makeText(options))

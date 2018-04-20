@@ -1,6 +1,6 @@
 # execa-wrap
 
-> Wraps execa and makes output suitable for snapshot testing
+> Wraps [execa][execa] and makes output suitable for snapshot testing
 
 [![NPM][npm-icon] ][npm-url]
 
@@ -68,6 +68,17 @@ execaWrap('failing-command', ['its', 'arguments'])
     // output will be text like above but with
     // details like exit code and stderr
   })
+```
+
+You can pass other options to [execa][execa], for example environment variables
+
+```js
+const execaWrap = require('execa-wrap')
+execaWrap('failing-command', ['its', 'arguments'], {
+  env: {
+    FOO: 'foo'
+  }
+})
 ```
 
 ### Filtering properties
@@ -141,3 +152,4 @@ OTHER DEALINGS IN THE SOFTWARE.
 [standard-url]: http://standardjs.com/
 [renovate-badge]: https://img.shields.io/badge/renovate-app-blue.svg
 [renovate-app]: https://renovateapp.com/
+[execa]: https://github.com/sindresorhus/execa

@@ -60,3 +60,23 @@ exports['single field filter 1'] = `
   -------
 
 `
+
+exports['passed FOO environment variable 1'] = `
+
+  command: node -e console.log(process.env.FOO)
+  code: 0
+  failed: false
+  killed: false
+  signal: null
+  timedOut: false
+
+  stdout:
+  -------
+  foo
+  -------
+  stderr:
+  -------
+  
+  -------
+  
+`

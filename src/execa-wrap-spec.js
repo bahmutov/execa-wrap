@@ -27,10 +27,18 @@ if (os.platform() !== 'win32') {
         snapshot.bind(null, 'single field filter')
       )
     })
+
     it('can filter several fields', () => {
       return execaWrap('ls', ['src'], { filter: ['cmd', 'stdout'] }).then(
         snapshot.bind(null, 'fields filter')
       )
     })
+
+    it('can pass environment variables', () =>
+      execaWrap('node', ['-e', 'console.log(process.env.FOO)'], {
+        env: {
+          FOO: 'foo'
+        }
+      }).then(snapshot.bind(null, 'passed FOO environment variable')))
   })
 }
