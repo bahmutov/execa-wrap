@@ -92,6 +92,6 @@
     "indent-string": "3.2.0",
     "ramda": "0.26.1",
     "strip-ansi": "4.0.0",
-    "strip-indent": "2.0.0"
+    "strip-indent": "3.0.0"
   }
 }
